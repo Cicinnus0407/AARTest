@@ -91,12 +91,12 @@ uploadArchives {
 ##### 3.构建aar,输出到本地
 ```
 在项目目录,执行命令行./gradlew uploadArchives
-获取在AS右边的gradle插件中
+或者在AS右边的gradle插件中
 选择library模块 -> upload -> 双击uploadArchives .等待编译结束
 编译结束后在Library模块 -> outputs -> aar .就可以找到编译好的aar包
 ```
 
-##### 4.引用本地aar(因为缺失对maven的依赖管理,所以本地引用会导致依赖无法正确传递,即使用本地aar包的方式会导致远程依赖失效.解决方案请继续往下)
+##### 4.引用本地aar(因为缺失对maven的依赖管理,所以本地引用会导致依赖无法正确传递,意思就是用本地aar包的方式会导致远程依赖失效.解决方案请继续往下)
 ```
 在app模块的gradle文件添加
 ...
