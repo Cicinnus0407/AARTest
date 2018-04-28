@@ -30,7 +30,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
     //不推荐用本地aar,因为即使使用了transitive关键字依然无法传递依赖
-    api (name: 'aarlibrary-release', ext: 'aar',transitive:true)
+    api (name: 'aarlibrary', ext: 'aar',transitive:true)
     //推荐使用远程依赖的方式,前提是有自己的maven私服
 //    implementation group: 'com.cicinnus.aartest', name: 'aartest', version: '0.0.1', transitive: true
 }

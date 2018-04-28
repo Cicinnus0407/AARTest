@@ -46,7 +46,7 @@ transitive|false|不传递依赖,true为传递,默认为false
 
 ##### 1.添加一个AndroidLibrary模块
 ```
-双击工程父目录  -> NEW -> Module -> Android Library 
+右键工程父目录  -> New -> Module -> Android Library
 ```
 
 ##### 2.修改Library模块的build.gradle
@@ -144,7 +144,7 @@ allprojects {
 
 ```
 
-##### 总结最佳方案
+#### 总结最佳方案
 使用远程aar,最大优势:
 - .方便处理依赖冲突,依赖传递
 
@@ -152,7 +152,7 @@ allprojects {
 - 1.aar中的第三个库无法使用远程依赖
 - 2.如果使用本地maven,需要每个参与开发的人员都配置一个本地的maven仓库,不现实
 
-aar最佳使用流程和推荐用法
+#### aar最佳使用流程和推荐用法
 
 - 1.配置gradle task,上传aar包到maven仓库
 - 2.配置远程依赖,将依赖的版本号设为'+'.意为动态使用最新版本,可以解决aar更新后无法及时知道的问题
