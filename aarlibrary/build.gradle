@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        manifestPlaceholders = [
+//                AMapKey: ""
+//        ]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    //使用远程依赖了高德地图
+    api 'com.amap.api:3dmap:6.1.0'
+}
+
+//maven上传,示例代码将aar输出到了本地,如果公司有maven私服,可以将地址改为maven私服的地址
+//建议使用私服地址
+def MAVEN_LOCAL_PATH = 'file://localhost/' + rootProject.buildDir
+//版本号
+def VERSION = '0.0.1'
+//公司名称
+def GROUP_ID = 'com.cicinnus.aartest'
+//aar包名称
+def ARTIFACT_ID = 'aartest'
+//maven私服的账号
+//def ACCOUNT = ''
+//maven私服密码
+//def PWD = ''
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: MAVEN_LOCAL_PATH) {
+                //如果使用的是maven私服,一般都需要账号密码
+//                authentication(userName :ACCOUNT,password:PWD)
+            }
+            pom.groupId = GROUP_ID
+            pom.artifactId = ARTIFACT_ID
+            pom.version = VERSION
+            pom.packaging = 'aar'
+
+        }
+    }
+}
