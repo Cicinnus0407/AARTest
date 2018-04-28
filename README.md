@@ -4,7 +4,7 @@
 
 　　最近在做基础功能和架构搭建,所以会将基础功能进行封装,并提供一份远程依赖.在使用过程中踩了很多坑.特地进行记录<br>
   
-　　不想看分析和流程的可以直接点击查看[示例代码](https://github.com/Cicinnus0407/AARTest)
+　　不想看分析和流程的可以直接点击查看,重点关注工程的三个gradle文件和相关注释,MainActivity有引用库的类示例[示例代码](https://github.com/Cicinnus0407/AARTest)
   
 
  　　在Android中使用第三方的库和自己的库,无论是远程依赖还是本地依赖,通常会选择JAR和AAR的形式.而AAR相比JAR包可以包含资源文件.可以有AndroidManifest文件.所以都会建议使用AAR包的形式进行打包.<br>
